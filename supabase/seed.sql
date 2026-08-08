@@ -1,0 +1,4 @@
+-- Run only after replacing UUID with a real auth.users UUID.
+-- insert into public.users(id,email,name,onboarding_complete,timezone) values ('00000000-0000-0000-0000-000000000001','jamie@example.com','Jamie Rivera',true,'America/New_York');
+-- insert into public.children(user_id,name,dob,school,grade,doctor,notes) values ('00000000-0000-0000-0000-000000000001','Maya Rivera','2016-04-12','Maple Elementary','3','Dr. Chen','Allergic to peanuts'),('00000000-0000-0000-0000-000000000001','Leo Rivera','2020-09-03','Little Oaks Preschool','Pre-K','Dr. Chen','Loves dinosaurs');
+-- Sample data is intentionally commented so seed execution cannot violate auth foreign keys.
