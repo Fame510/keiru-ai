@@ -1,0 +1,1 @@
+import {requireUser} from '@/lib/supabase/server';import {apiError} from '@/lib/utils';export async function GET(){try{const {supabase,user}=await requireUser();const {data,error}=await supabase.from('ai_drafts').select('*').eq('user_id',user.id).order('created_at',{ascending:false});if(error)throw error;return Response.json(data)}catch(e){return apiError(e)}}
