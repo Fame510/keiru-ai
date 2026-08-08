@@ -1,0 +1,1 @@
+export function Label(p:React.LabelHTMLAttributes<HTMLLabelElement>){return <label className="text-sm font-medium" {...p}/>};
