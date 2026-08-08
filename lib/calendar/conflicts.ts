@@ -1,0 +1,1 @@
+export async function detectConflicts(s:any,userId:string,start:string,end:string,excludeId?:string){let q=s.from('events').select('id,title,start_time,end_time').eq('user_id',userId).lt('start_time',end).gt('end_time',start);if(excludeId)q=q.neq('id',excludeId);const {data,error}=await q;if(error)throw error;return data||[]}
