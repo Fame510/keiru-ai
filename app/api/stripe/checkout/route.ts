@@ -1,0 +1,1 @@
+import {requireUser} from '@/lib/supabase/server';import {checkout} from '@/lib/stripe/checkout';import {apiError} from '@/lib/utils';export async function POST(){try{const {user}=await requireUser();const s=await checkout(user.id,user.email!);return Response.json({url:s.url})}catch(e){return apiError(e)}}
