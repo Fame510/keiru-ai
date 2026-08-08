@@ -1,0 +1,1 @@
+import {cn} from '@/lib/utils';export function Badge({className,...p}:React.HTMLAttributes<HTMLSpanElement>){return <span className={cn('rounded-full bg-lavender px-2 py-1 text-xs font-semibold text-violetcore',className)} {...p}/>};
