@@ -1,0 +1,1 @@
+import {cn} from '@/lib/utils';export function Select({className,...p}:React.SelectHTMLAttributes<HTMLSelectElement>){return <select className={cn('field',className)} {...p}/>};
