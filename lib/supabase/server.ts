@@ -1,0 +1,3 @@
+import {createServerClient} from '@supabase/ssr';import {cookies} from 'next/headers';
+export async function createClient(){const jar=cookies();return createServerClient(process.env.NEXT_PUBLIC_SUPABASE_URL!,process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,{cookies:{getAll:()=>jar.getAll(),setAll:xs=>{try{xs.forEach(x=>jar.set(x.name,x.value,x.options))}catch{}}}})}
+export async function requireUser(){const s=await createClient();const {data:{user}}=await s.auth.getUser();if(!user)throw new Error('UNAUTHORIZED');return {supabase:s,user};}
