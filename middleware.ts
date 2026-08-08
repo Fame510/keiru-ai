@@ -1,0 +1,1 @@
+import {updateSession} from '@/lib/supabase/middleware';import type {NextRequest} from 'next/server';export async function middleware(r:NextRequest){return updateSession(r)}export const config={matcher:['/dashboard/:path*','/api/:path*']};
